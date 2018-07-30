@@ -1,0 +1,66 @@
+<!doctype html>
+
+
+<html>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function()
+{
+    $("input[name=Submit]").click(function()
+    {
+
+     if(!$("input[name=username]").val())
+     {
+     	alert("User-Name must be filled");
+			return false;
+     } 
+
+     var x=$("input[name=pass]").val();
+		if(x.length<8||x.length>15)
+		{
+			alert("Not a valid Password ");
+			return false;
+		}
+		
+	});
+});
+
+
+
+
+</script>
+</head>
+
+
+<body bgcolor=#82E0AA    >
+<center><h1><b><u>LOGIN PAGE </u></b></h1></CENTER> 
+<br>
+<hr>
+<form  name="myform" action="main.HTML" method="post" >
+<center>
+<h3><i><b>
+
+<br>
+USERNAME:<br>
+<input type="text" name="username">
+<br>
+<br>
+PASSWORD:<br>
+<input type="password" name="pass" >
+<br>
+<br>
+<br>
+
+<input type="SUBMIT" name="Submit" >
+
+<br><br>
+<br>
+<a href="register.html">Not registered?create account.
+</h3></i></b>
+</center>
+</form>
+</body>
+</html>

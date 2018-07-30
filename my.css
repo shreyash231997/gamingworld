@@ -1,0 +1,58 @@
+
+	
+.right{
+	 width:25%;
+	 height:100%;
+	 color:blue;
+	float:right;
+	 background-color:#F7DC6F  ;
+	 border-collapse:collapse;
+}
+.img{
+         transition:width 5s,transform 2s;
+		
+
+	 }
+.img:hover{
+
+transform:rotate(360deg);
+}
+
+	
+.left{
+	width:25%;
+	height:100%;
+	color:blue  ;
+    float:left;
+	background-color:#D7BDE2  ;
+	border-collapse:collapse;
+	}
+.img2:hover{
+animation:abc 5s;
+}
+
+@keyframes abc
+{
+0%{
+transform:rotate(0deg);
+}
+25%{
+transform:rotate(90deg);
+}
+50%{
+transform:rotate(180deg);
+}
+75%{
+transform:rotate(270deg);
+}
+100%{
+transform:rotate(360deg);
+}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+<!doctype html>
+
+
+<html>
+<head>
+<script type="text/javascript">
+	function validateform()
+	{
+
+
+//VALIDATION FOR RADIO BUTTON//
+		if ( ( myform.gender[0].checked == false ) && ( myform.gender[1].checked== false ) ) 
+		{ 
+		
+			alert ( "Please choose your Gender: Male or Female" );
+			 return false; 
+		}
+
+//VALIDATION FOR FIRST NAME//
+		var x=document.forms["myform"]["fname"].value;
+		if(x=="")
+		{
+			alert("First Name must be filled");
+			return false;
+		}
+
+//VALIDATION FOR LAST NAME//
+		var x =document.forms["myform"]["lname"].value;
+		if(x=="")
+		{
+			alert("Last Name must be filled");
+			return false;
+		}
+
+//VALIDATION FOR EMAIL-ID//
+		var x=document.forms["myform"]["email"].value;
+		if(x=="")
+		{
+			alert("Email ID must be entered")
+		}
+		var atpos = x.indexOf("@");
+                       var dotpos = x.lastIndexOf(".");
+                if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+                { 
+		    alert("Not a valid e-mail address");
+                    return false;
+		}
+
+//VALIDATION FOR PASSWORD//
+		 var x=document.forms["myform"]["password"].value;
+		if(x.length<8||x.length>15)
+		{
+			alert("Not a valid Password ");
+			return false;
+		}
+
+//VALIDATION FOR CONFIRM PASSWORD//		
+
+         var x=document.forms["myform"]["password"].value;
+		 var cf=document.forms["myform"]["cpass"].value;
+		if(x!=cf)
+		{
+			alert("Password is incorrect");
+			return false;
+		}
+
+
+//VALIDATION FOR CONTACT NUMBER//
+	var a = document.forms["myform"]["phone"].value;
+		if(a=="")
+		{
+			alert("please Enter the Contact Number");
+			return false;
+		}
+		if(isNaN(a))
+		{
+			alert("Enter the valid Mobile Number(Like : 9566137117)");
+			return false;
+		}
+		if((a.length < 1) || (a.length > 10))
+		{
+			alert(" Your Mobile Number must be 1 to 10 Integers");
+			return false;
+		}
+
+
+//VALIDATION FOR AGE//
+		 var x=document.forms["myform"]["age"].value;
+                 var y=18;
+ 		if(x<y)
+		{
+			alert("Not a valid Age ");
+			return false;
+		}
+
+
+
+//VALIDATION FOR CHECKBOX//
+		if(!document.forms["myform"]["terms"].checked)
+		{
+			alert("Please accept terms and condition");
+			return false;
+		}
+
+
+	}
+
+
+</script>
+</head>
+<body bgcolor=#F5B7B1   > 
+<BR>
+<center><h1><b><u> WELCOME TO ONLINE GAMING REGISTRATION FORM</u></b></h1></CENTER> 
+<br>
+<hr>
+<form  name="myform" action="main.HTML" method="post" onsubmit="return validateform()">
+
+<center>
+
+  <h3><i><b>
+
+<input type="radio"  name="gender"  value="MALE">    MALE
+
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+  
+<input type="radio" name="gender"  value="FEMALE" >FEMALE
+<br>
+<br>
+FIRST NAME:<br>
+<input type="text" name="fname"  >
+<br>
+<br>
+LAST NAME:<br>
+<input type="text" name="lname"  >
+<br>
+<br>
+EMAIL ID:<br>
+<input type="email"   name="email">
+<br>
+<br>
+PASSWORD:<br>
+<input type="password" name="password" min="8" max="15"  >
+<br>
+<br>
+CONFIRM PASSWORD:<br>
+<input type="password" name="cpass"  >
+<br>
+<br>
+CONTACT NUMBER:<br>
+<input type="tel"name="phone">
+<br>
+<br>
+AGE:<br>
+<input type="number" name="age"  >
+<BR>
+<BR>
+LIKING:<br>
+<select>
+  <option value="CRICKET">cricket</option>
+  <option value="FOOTBALL">football</option>
+  <option value="RACING">racing</option>
+  <option value="ACTION GAMES" >action games</option>
+</select>
+<BR>
+<br>
+ <input type="checkbox" name="terms"> I agree all terms and condition.<br>
+<br>
+ 
+</b></i></h3>
+&nbsp
+&nbsp
+&nbsp   
+&nbsp
+&nbsp  
+
+<input type="RESET" >
+&nbsp
+&nbsp
+&nbsp   
+&nbsp
+&nbsp 
+<input type="SUBMIT" >
+
+<br>
+
+
+</center>
+</form>
+</body>
+</html>
